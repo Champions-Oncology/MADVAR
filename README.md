@@ -28,8 +28,10 @@ data(TCGAcolon_adenocarcinomaTPM)
 filteredData <- madvar(data = TCGAcolon_adenocarcinomaTPM,
                        plot_density = F)
 ```
+It is also possible to input a variance vector (using the `data` argument), for which a cutoff value is returned.  
 
-You can also plot the cutoff in exploratory mode.
+
+You can also plot the cutoff over the distribution density in exploratory mode:
 ```
 madvar(data = TCGAcolon_adenocarcinomaTPM,
        plot_density = T)

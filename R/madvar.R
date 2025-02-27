@@ -30,6 +30,16 @@ madvar <- function (data, mads = 2, must_genes = NULL, plot_density = FALSE, ...
     gene_variance <- data
   }
   med <- median(gene_variance)
+  if (med <= 0) {
+    warning("Most features have 0 variance.\nI'm removing them and re-calculating the cutoff.")
+    if (mat) {
+      data <- data[gene_variance > 0, ]
+      gene_variance <- apply(as.matrix(data), 1, var, na.rm = T)
+    }
+    else {
+      gene_variance <- gene_variance[gene_variance > 0]
+    }
+  }
   MAD <- mad(gene_variance)
   median_peak <- 2 * med - min(gene_variance)
   if (plot_density) { # Exploratoration mode with plot
