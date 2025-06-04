@@ -9,7 +9,7 @@ madvar(data, mads = 2, must_genes = NULL, plot_density = FALSE, ...)
 \arguments{
 \item{data}{a numeric matrix or a numeric vector. If matrix - Genes must be in rows}
 
-\item{mads}{numeric. number of MADs to be added to the median for cutoff.}
+\item{mads}{numeric (0-10]. Number of MADs to be added to the median for cutoff. Default=2 according to the outlier detection threshold.}
 
 \item{must_genes}{a string vector with gene names that must be included in the output. Relevant only for matrix input.}
 
@@ -18,7 +18,7 @@ madvar(data, mads = 2, must_genes = NULL, plot_density = FALSE, ...)
 \item{...}{additional arguments to other functions}
 }
 \value{
-a filtered matrix (if \code{data} is a matrix) or a numeric cutoff (if \code{data} is a vector); none if plot_density == FALSE.
+If \code{plot_density} == FALSE: a filtered matrix (if \code{data} is a matrix) or a numeric cutoff (if \code{data} is a vector); If \code{plot_density} == TRUE: a \code{ggplot} object.
 }
 \description{
 This function calculates a cutoff based on data variance, aiming to filter out the "0 variance peak".

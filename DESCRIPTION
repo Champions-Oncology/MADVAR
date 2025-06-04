@@ -11,7 +11,8 @@ Description: Calculates a cutoff based on data variance. Also provides an explor
 Imports: 
     stats,
     modeest,
-    ggplot2
+    ggplot2,
+    assertthat
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
