@@ -47,7 +47,7 @@ madvar <- function (data, mads = 2, must_genes = NULL, plot_density = FALSE, ...
   }
   MAD <- mad(gene_variance)
   median_peak <- 2 * med - min(gene_variance)
-  if (plot_density) { # Exploratoration mode with plot
+  if (plot_density) { # Exploratory mode with plot
     assert_that(mat, msg = "Error: The plot can be generated only for a matrix/data frame")
     mode <- asselin(gene_variance, ...)
     p <- ggplot(as.data.frame(gene_variance), aes(x=gene_variance)) +
