@@ -1,7 +1,7 @@
 Package: MADVAR
 Type: Package
 Title: Variance-Based Feature Selection in Biological data
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person( 
       "Gilad", "Silberberg", 
