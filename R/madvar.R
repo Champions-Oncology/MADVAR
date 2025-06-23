@@ -23,7 +23,8 @@
 #'}
 madvar <- function (data, mads = 2, must_genes = NULL, plot_density = FALSE, ...) {
   assert_that(mads > 0 && mads <= 10, msg = "Error: 'mads' must be > 0 and <= 10")
-  assert_that(min(data, na.rm = T) >= 0, msg = "Error: Negative values are not allowed")
+  if(min(data, na.rm = T) < 0)
+    message("The data contains negative values!")
   abline <- axis <- par <- text <- NULL
   mat <- FALSE
   if (is.matrix(data) | is.data.frame(data))
